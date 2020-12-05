@@ -26,16 +26,6 @@
     <Property Name="cechNUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="cechNAME" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
-  <EntityType Name="countOfWorkers">
-    <Key>
-      <PropertyRef Name="countOfWorkersNUM" />
-    </Key>
-    <Property Name="countOfWorkersNUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="positionNUM" Type="int" />
-    <Property Name="cechNUM" Type="int" />
-    <Property Name="countInCech" Type="int" Nullable="false" />
-    <Property Name="countInPosition" Type="int" Nullable="false" />
-  </EntityType>
   <EntityType Name="delivery">
     <Key>
       <PropertyRef Name="deliveryNUM" />
@@ -123,30 +113,6 @@
     <Property Name="positionNUM" Type="int" Nullable="false" />
     <Property Name="cechNUM" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="FK__countOfWo__cechN__619B8048">
-    <End Role="cech" Type="Self.cech" Multiplicity="0..1" />
-    <End Role="countOfWorkers" Type="Self.countOfWorkers" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="cech">
-        <PropertyRef Name="cechNUM" />
-      </Principal>
-      <Dependent Role="countOfWorkers">
-        <PropertyRef Name="cechNUM" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__countOfWo__posit__60A75C0F">
-    <End Role="position" Type="Self.position" Multiplicity="0..1" />
-    <End Role="countOfWorkers" Type="Self.countOfWorkers" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="position">
-        <PropertyRef Name="positionNUM" />
-      </Principal>
-      <Dependent Role="countOfWorkers">
-        <PropertyRef Name="positionNUM" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__delivery__goodsN__160F4887">
     <End Role="goods" Type="Self.goods" Multiplicity="1" />
     <End Role="delivery" Type="Self.delivery" Multiplicity="*" />
@@ -259,7 +225,6 @@
     <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="benefits" EntityType="Self.benefits" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="cech" EntityType="Self.cech" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="countOfWorkers" EntityType="Self.countOfWorkers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="delivery" EntityType="Self.delivery" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="goods" EntityType="Self.goods" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="person" EntityType="Self.person" Schema="dbo" store:Type="Tables" />
@@ -269,14 +234,6 @@
     <EntitySet Name="supplier" EntityType="Self.supplier" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="workers" EntityType="Self.workers" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__countOfWo__cechN__619B8048" Association="Self.FK__countOfWo__cechN__619B8048">
-      <End Role="cech" EntitySet="cech" />
-      <End Role="countOfWorkers" EntitySet="countOfWorkers" />
-    </AssociationSet>
-    <AssociationSet Name="FK__countOfWo__posit__60A75C0F" Association="Self.FK__countOfWo__posit__60A75C0F">
-      <End Role="position" EntitySet="position" />
-      <End Role="countOfWorkers" EntitySet="countOfWorkers" />
-    </AssociationSet>
     <AssociationSet Name="FK__delivery__goodsN__160F4887" Association="Self.FK__delivery__goodsN__160F4887">
       <End Role="goods" EntitySet="goods" />
       <End Role="delivery" EntitySet="delivery" />

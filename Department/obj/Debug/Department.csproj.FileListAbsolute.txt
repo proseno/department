@@ -157,3 +157,12 @@ C:\Users\acer\Desktop\Studing\C#\Department\Department\bin\Debug\zh-CHT\Microsof
 C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\Department.workers_reports.resources
 C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\RdlCompile.cache
 C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\RdlCompile.compiled
+C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\Department.person_reports.resources
+C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\Department.benefits_reports.resources
+C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\Department.cech_reports.resources
+C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\Department.position_reports.resources
+C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\Department.delivery_reports.resources
+C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\Department.goods_reports.resources
+C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\Department.storage_reports.resources
+C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\Department.supplier_reports.resources
+C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\Department.person_benefits_reports.resources

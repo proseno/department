@@ -87,5 +87,59 @@ namespace Department
             workers_reports wr = new workers_reports();
             wr.Show();
         }
+
+        private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            person_reports pr = new person_reports();
+            pr.Show();
+        }
+
+        private void benefitsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            benefits_reports br = new benefits_reports();
+            br.Show();
+        }
+
+        private void cechToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cech_reports cr = new cech_reports();
+            cr.Show();
+        }
+
+        private void positionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            position_reports pr = new position_reports();
+            pr.Show();
+        }
+
+        private void deliveryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            delivery_reports dr = new delivery_reports();
+            dr.Show();
+        }
+
+        private void goodsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            goods_reports gr = new goods_reports();
+            gr.Show();
+        }
+
+        private void storageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            storage_reports sr = new storage_reports();
+            sr.Show();
+        }
+
+        private void supplierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            supplier_reports sr = new supplier_reports();
+            sr.Show();
+        }
+
+        private void personBenefitsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            person_benefits_reports pbr = new person_benefits_reports();
+            pbr.Show();
+        }
     }
 }

@@ -29,17 +29,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="countOfWorkers">
-      <EntityTypeMapping TypeName="DepartmentModel.countOfWorkers">
-        <MappingFragment StoreEntitySet="countOfWorkers">
-          <ScalarProperty Name="countOfWorkersNUM" ColumnName="countOfWorkersNUM" />
-          <ScalarProperty Name="positionNUM" ColumnName="positionNUM" />
-          <ScalarProperty Name="cechNUM" ColumnName="cechNUM" />
-          <ScalarProperty Name="countInCech" ColumnName="countInCech" />
-          <ScalarProperty Name="countInPosition" ColumnName="countInPosition" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="delivery">
       <EntityTypeMapping TypeName="DepartmentModel.delivery">
         <MappingFragment StoreEntitySet="delivery">

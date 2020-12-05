@@ -37,13 +37,21 @@
             this.benefits_table = new System.Windows.Forms.ToolStripMenuItem();
             this.personBenefits_table = new System.Windows.Forms.ToolStripMenuItem();
             this.cech_table = new System.Windows.Forms.ToolStripMenuItem();
-            this.countOfWorkers_table = new System.Windows.Forms.ToolStripMenuItem();
             this.goods_table = new System.Windows.Forms.ToolStripMenuItem();
             this.storage_table = new System.Windows.Forms.ToolStripMenuItem();
             this.supplier_table = new System.Windows.Forms.ToolStripMenuItem();
             this.delivery_table = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.workersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.peopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.benefitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cechToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.positionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deliveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.goodsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.storageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personBenefitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +77,6 @@
             this.benefits_table,
             this.personBenefits_table,
             this.cech_table,
-            this.countOfWorkers_table,
             this.goods_table,
             this.storage_table,
             this.supplier_table,
@@ -82,7 +89,7 @@
             // 
             this.person_table.Image = ((System.Drawing.Image)(resources.GetObject("person_table.Image")));
             this.person_table.Name = "person_table";
-            this.person_table.Size = new System.Drawing.Size(204, 26);
+            this.person_table.Size = new System.Drawing.Size(224, 26);
             this.person_table.Text = "Person";
             this.person_table.Click += new System.EventHandler(this.person_table_Click);
             // 
@@ -126,13 +133,6 @@
             this.cech_table.Text = "Cech";
             this.cech_table.Click += new System.EventHandler(this.cech_table_Click);
             // 
-            // countOfWorkers_table
-            // 
-            this.countOfWorkers_table.Name = "countOfWorkers_table";
-            this.countOfWorkers_table.Size = new System.Drawing.Size(204, 26);
-            this.countOfWorkers_table.Text = "Count of workers";
-            this.countOfWorkers_table.Visible = false;
-            // 
             // goods_table
             // 
             this.goods_table.Image = ((System.Drawing.Image)(resources.GetObject("goods_table.Image")));
@@ -168,7 +168,16 @@
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.workersToolStripMenuItem});
+            this.workersToolStripMenuItem,
+            this.peopleToolStripMenuItem,
+            this.benefitsToolStripMenuItem,
+            this.cechToolStripMenuItem,
+            this.positionToolStripMenuItem,
+            this.deliveryToolStripMenuItem,
+            this.goodsToolStripMenuItem,
+            this.storageToolStripMenuItem,
+            this.supplierToolStripMenuItem,
+            this.personBenefitsToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -180,6 +189,78 @@
             this.workersToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.workersToolStripMenuItem.Text = "Workers";
             this.workersToolStripMenuItem.Click += new System.EventHandler(this.workersToolStripMenuItem_Click);
+            // 
+            // peopleToolStripMenuItem
+            // 
+            this.peopleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("peopleToolStripMenuItem.Image")));
+            this.peopleToolStripMenuItem.Name = "peopleToolStripMenuItem";
+            this.peopleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.peopleToolStripMenuItem.Text = "People";
+            this.peopleToolStripMenuItem.Click += new System.EventHandler(this.peopleToolStripMenuItem_Click);
+            // 
+            // benefitsToolStripMenuItem
+            // 
+            this.benefitsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("benefitsToolStripMenuItem.Image")));
+            this.benefitsToolStripMenuItem.Name = "benefitsToolStripMenuItem";
+            this.benefitsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.benefitsToolStripMenuItem.Text = "Benefits";
+            this.benefitsToolStripMenuItem.Click += new System.EventHandler(this.benefitsToolStripMenuItem_Click);
+            // 
+            // cechToolStripMenuItem
+            // 
+            this.cechToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cechToolStripMenuItem.Image")));
+            this.cechToolStripMenuItem.Name = "cechToolStripMenuItem";
+            this.cechToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cechToolStripMenuItem.Text = "Cech";
+            this.cechToolStripMenuItem.Click += new System.EventHandler(this.cechToolStripMenuItem_Click);
+            // 
+            // positionToolStripMenuItem
+            // 
+            this.positionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("positionToolStripMenuItem.Image")));
+            this.positionToolStripMenuItem.Name = "positionToolStripMenuItem";
+            this.positionToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.positionToolStripMenuItem.Text = "Position";
+            this.positionToolStripMenuItem.Click += new System.EventHandler(this.positionToolStripMenuItem_Click);
+            // 
+            // deliveryToolStripMenuItem
+            // 
+            this.deliveryToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deliveryToolStripMenuItem.Image")));
+            this.deliveryToolStripMenuItem.Name = "deliveryToolStripMenuItem";
+            this.deliveryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.deliveryToolStripMenuItem.Text = "Delivery";
+            this.deliveryToolStripMenuItem.Click += new System.EventHandler(this.deliveryToolStripMenuItem_Click);
+            // 
+            // goodsToolStripMenuItem
+            // 
+            this.goodsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("goodsToolStripMenuItem.Image")));
+            this.goodsToolStripMenuItem.Name = "goodsToolStripMenuItem";
+            this.goodsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.goodsToolStripMenuItem.Text = "Goods";
+            this.goodsToolStripMenuItem.Click += new System.EventHandler(this.goodsToolStripMenuItem_Click);
+            // 
+            // storageToolStripMenuItem
+            // 
+            this.storageToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("storageToolStripMenuItem.Image")));
+            this.storageToolStripMenuItem.Name = "storageToolStripMenuItem";
+            this.storageToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.storageToolStripMenuItem.Text = "Storage";
+            this.storageToolStripMenuItem.Click += new System.EventHandler(this.storageToolStripMenuItem_Click);
+            // 
+            // supplierToolStripMenuItem
+            // 
+            this.supplierToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("supplierToolStripMenuItem.Image")));
+            this.supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
+            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.supplierToolStripMenuItem.Text = "Supplier";
+            this.supplierToolStripMenuItem.Click += new System.EventHandler(this.supplierToolStripMenuItem_Click);
+            // 
+            // personBenefitsToolStripMenuItem
+            // 
+            this.personBenefitsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("personBenefitsToolStripMenuItem.Image")));
+            this.personBenefitsToolStripMenuItem.Name = "personBenefitsToolStripMenuItem";
+            this.personBenefitsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.personBenefitsToolStripMenuItem.Text = "Person benefits";
+            this.personBenefitsToolStripMenuItem.Click += new System.EventHandler(this.personBenefitsToolStripMenuItem_Click);
             // 
             // admin
             // 
@@ -211,12 +292,20 @@
         private System.Windows.Forms.ToolStripMenuItem benefits_table;
         private System.Windows.Forms.ToolStripMenuItem personBenefits_table;
         private System.Windows.Forms.ToolStripMenuItem cech_table;
-        private System.Windows.Forms.ToolStripMenuItem countOfWorkers_table;
         private System.Windows.Forms.ToolStripMenuItem goods_table;
         private System.Windows.Forms.ToolStripMenuItem storage_table;
         private System.Windows.Forms.ToolStripMenuItem supplier_table;
         private System.Windows.Forms.ToolStripMenuItem delivery_table;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem workersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem peopleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem benefitsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cechToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem positionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deliveryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem goodsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem storageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem personBenefitsToolStripMenuItem;
     }
 }

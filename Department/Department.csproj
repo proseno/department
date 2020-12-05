@@ -176,6 +176,12 @@
     <Compile Include="benefits_form.Designer.cs">
       <DependentUpon>benefits_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="benefits_reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="benefits_reports.Designer.cs">
+      <DependentUpon>benefits_reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="benefits_search.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,14 +197,17 @@
     <Compile Include="cech_form.Designer.cs">
       <DependentUpon>cech_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="cech_reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cech_reports.Designer.cs">
+      <DependentUpon>cech_reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="cech_search.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="cech_search.Designer.cs">
       <DependentUpon>cech_search.cs</DependentUpon>
-    </Compile>
-    <Compile Include="countOfWorkers.cs">
-      <DependentUpon>Department.tt</DependentUpon>
     </Compile>
     <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>Department.tt</DependentUpon>
@@ -211,6 +220,12 @@
     </Compile>
     <Compile Include="delivery_form.Designer.cs">
       <DependentUpon>delivery_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delivery_reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delivery_reports.Designer.cs">
+      <DependentUpon>delivery_reports.cs</DependentUpon>
     </Compile>
     <Compile Include="delivery_search.cs">
       <SubType>Form</SubType>
@@ -266,6 +281,12 @@
     <Compile Include="goods_form.Designer.cs">
       <DependentUpon>goods_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="goods_reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="goods_reports.Designer.cs">
+      <DependentUpon>goods_reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="goods_search.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +305,12 @@
     <Compile Include="person_benefits_form.Designer.cs">
       <DependentUpon>person_benefits_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="person_benefits_reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="person_benefits_reports.Designer.cs">
+      <DependentUpon>person_benefits_reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="person_benefits_search.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +322,12 @@
     </Compile>
     <Compile Include="person_form.Designer.cs">
       <DependentUpon>person_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="person_reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="person_reports.Designer.cs">
+      <DependentUpon>person_reports.cs</DependentUpon>
     </Compile>
     <Compile Include="person_search.cs">
       <SubType>Form</SubType>
@@ -310,6 +343,12 @@
     </Compile>
     <Compile Include="position_form.Designer.cs">
       <DependentUpon>position_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="position_reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="position_reports.Designer.cs">
+      <DependentUpon>position_reports.cs</DependentUpon>
     </Compile>
     <Compile Include="position_search.cs">
       <SubType>Form</SubType>
@@ -385,6 +424,12 @@
     <Compile Include="storage_form.Designer.cs">
       <DependentUpon>storage_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="storage_reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="storage_reports.Designer.cs">
+      <DependentUpon>storage_reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="storage_search.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -399,6 +444,12 @@
     </Compile>
     <Compile Include="supplier_form.Designer.cs">
       <DependentUpon>supplier_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supplier_reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supplier_reports.Designer.cs">
+      <DependentUpon>supplier_reports.cs</DependentUpon>
     </Compile>
     <Compile Include="supplier_search.cs">
       <SubType>Form</SubType>
@@ -434,20 +485,32 @@
     <EmbeddedResource Include="admin.resx">
       <DependentUpon>admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="benefitsFullInfo.rdlc" />
     <EmbeddedResource Include="benefits_form.resx">
       <DependentUpon>benefits_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="benefits_reports.resx">
+      <DependentUpon>benefits_reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="benefits_search.resx">
       <DependentUpon>benefits_search.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="cechFullInfo.rdlc" />
     <EmbeddedResource Include="cech_form.resx">
       <DependentUpon>cech_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cech_reports.resx">
+      <DependentUpon>cech_reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cech_search.resx">
       <DependentUpon>cech_search.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="deliveryFullInfo.rdlc" />
     <EmbeddedResource Include="delivery_form.resx">
       <DependentUpon>delivery_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delivery_reports.resx">
+      <DependentUpon>delivery_reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="delivery_search.resx">
       <DependentUpon>delivery_search.cs</DependentUpon>
@@ -464,14 +527,23 @@
     <EmbeddedResource Include="fullData_workers.resx">
       <DependentUpon>fullData_workers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="goodsFullInfo.rdlc" />
     <EmbeddedResource Include="goods_form.resx">
       <DependentUpon>goods_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="goods_reports.resx">
+      <DependentUpon>goods_reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="goods_search.resx">
       <DependentUpon>goods_search.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="personFullInfo.rdlc" />
+    <EmbeddedResource Include="person_benefitsFullInfo.rdlc" />
     <EmbeddedResource Include="person_benefits_form.resx">
       <DependentUpon>person_benefits_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="person_benefits_reports.resx">
+      <DependentUpon>person_benefits_reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="person_benefits_search.resx">
       <DependentUpon>person_benefits_search.cs</DependentUpon>
@@ -479,11 +551,18 @@
     <EmbeddedResource Include="person_form.resx">
       <DependentUpon>person_form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="person_reports.resx">
+      <DependentUpon>person_reports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="person_search.resx">
       <DependentUpon>person_search.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="positionFullInfo.rdlc" />
     <EmbeddedResource Include="position_form.resx">
       <DependentUpon>position_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="position_reports.resx">
+      <DependentUpon>position_reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="position_search.resx">
       <DependentUpon>position_search.cs</DependentUpon>
@@ -521,14 +600,22 @@
     <EmbeddedResource Include="select_worker_form.resx">
       <DependentUpon>select_worker_form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="storageFullInfo.rdlc" />
     <EmbeddedResource Include="storage_form.resx">
       <DependentUpon>storage_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="storage_reports.resx">
+      <DependentUpon>storage_reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="storage_search.resx">
       <DependentUpon>storage_search.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="supplierFullInfo.rdlc" />
     <EmbeddedResource Include="supplier_form.resx">
       <DependentUpon>supplier_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supplier_reports.resx">
+      <DependentUpon>supplier_reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="supplier_search.resx">
       <DependentUpon>supplier_search.cs</DependentUpon>
