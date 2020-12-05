@@ -1,0 +1,726 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DepartmentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="benefits">
+          <Key>
+            <PropertyRef Name="benefitsNUM" />
+          </Key>
+          <Property Name="benefitsNUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="benefitsNAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="benefitsDESCRIPTION" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="benefitsKIND" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cech">
+          <Key>
+            <PropertyRef Name="cechNUM" />
+          </Key>
+          <Property Name="cechNUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cechNAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="delivery">
+          <Key>
+            <PropertyRef Name="deliveryNUM" />
+          </Key>
+          <Property Name="deliveryNUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="deliveryDATE" Type="datetime" Nullable="false" />
+          <Property Name="goodsCOUNT" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="goodsNUM" Type="int" Nullable="false" />
+          <Property Name="supplierNUM" Type="int" Nullable="false" />
+          <Property Name="workersNUM" Type="int" Nullable="false" />
+          <Property Name="storageNUM" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="goods">
+          <Key>
+            <PropertyRef Name="goodsNUM" />
+          </Key>
+          <Property Name="goodsNUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="goodsNAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="goodsPRICE" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="person">
+          <Key>
+            <PropertyRef Name="personNUM" />
+          </Key>
+          <Property Name="personNUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="personNAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="personPASPORT" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="personIDCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="personAddress" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="personBirth" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="person_benefits">
+          <Key>
+            <PropertyRef Name="person_benefitsNUM" />
+          </Key>
+          <Property Name="person_benefitsNUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="benefitsNUM" Type="int" />
+          <Property Name="personNUM" Type="int" />
+          <Property Name="person_benefitsSTART" Type="datetime" Nullable="false" />
+          <Property Name="person_benefitsEND" Type="datetime" />
+        </EntityType>
+        <EntityType Name="position">
+          <Key>
+            <PropertyRef Name="positionNUM" />
+          </Key>
+          <Property Name="positionNUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="positionNAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="positionSALARY" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="storage">
+          <Key>
+            <PropertyRef Name="storageNUM" />
+          </Key>
+          <Property Name="storageNUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="storageNAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="storageADDRESS" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="supplier">
+          <Key>
+            <PropertyRef Name="supplierNUM" />
+          </Key>
+          <Property Name="supplierNUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="supplierNAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="supplierADDRESS" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="supplierContacts" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="workers">
+          <Key>
+            <PropertyRef Name="workersNUM" />
+          </Key>
+          <Property Name="workersNUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="workersSTART" Type="datetime" Nullable="false" />
+          <Property Name="workersEND" Type="datetime" />
+          <Property Name="personNUM" Type="int" Nullable="false" />
+          <Property Name="positionNUM" Type="int" Nullable="false" />
+          <Property Name="cechNUM" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__delivery__goodsN__160F4887">
+          <End Role="goods" Type="Self.goods" Multiplicity="1" />
+          <End Role="delivery" Type="Self.delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="goods">
+              <PropertyRef Name="goodsNUM" />
+            </Principal>
+            <Dependent Role="delivery">
+              <PropertyRef Name="goodsNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__delivery__storag__18EBB532">
+          <End Role="storage" Type="Self.storage" Multiplicity="1" />
+          <End Role="delivery" Type="Self.delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="storage">
+              <PropertyRef Name="storageNUM" />
+            </Principal>
+            <Dependent Role="delivery">
+              <PropertyRef Name="storageNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__delivery__suppli__17036CC0">
+          <End Role="supplier" Type="Self.supplier" Multiplicity="1" />
+          <End Role="delivery" Type="Self.delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="supplier">
+              <PropertyRef Name="supplierNUM" />
+            </Principal>
+            <Dependent Role="delivery">
+              <PropertyRef Name="supplierNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__delivery__worker__17F790F9">
+          <End Role="workers" Type="Self.workers" Multiplicity="1" />
+          <End Role="delivery" Type="Self.delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="workers">
+              <PropertyRef Name="workersNUM" />
+            </Principal>
+            <Dependent Role="delivery">
+              <PropertyRef Name="workersNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__person_be__benef__02FC7413">
+          <End Role="benefits" Type="Self.benefits" Multiplicity="0..1" />
+          <End Role="person_benefits" Type="Self.person_benefits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="benefits">
+              <PropertyRef Name="benefitsNUM" />
+            </Principal>
+            <Dependent Role="person_benefits">
+              <PropertyRef Name="benefitsNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__person_be__perso__03F0984C">
+          <End Role="person" Type="Self.person" Multiplicity="0..1" />
+          <End Role="person_benefits" Type="Self.person_benefits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="person">
+              <PropertyRef Name="personNUM" />
+            </Principal>
+            <Dependent Role="person_benefits">
+              <PropertyRef Name="personNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__workers__cechNUM__59FA5E80">
+          <End Role="cech" Type="Self.cech" Multiplicity="1" />
+          <End Role="workers" Type="Self.workers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cech">
+              <PropertyRef Name="cechNUM" />
+            </Principal>
+            <Dependent Role="workers">
+              <PropertyRef Name="cechNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__workers__personN__5812160E">
+          <End Role="person" Type="Self.person" Multiplicity="1" />
+          <End Role="workers" Type="Self.workers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="person">
+              <PropertyRef Name="personNUM" />
+            </Principal>
+            <Dependent Role="workers">
+              <PropertyRef Name="personNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__workers__positio__59063A47">
+          <End Role="position" Type="Self.position" Multiplicity="1" />
+          <End Role="workers" Type="Self.workers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="position">
+              <PropertyRef Name="positionNUM" />
+            </Principal>
+            <Dependent Role="workers">
+              <PropertyRef Name="positionNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DepartmentModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="benefits" EntityType="Self.benefits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cech" EntityType="Self.cech" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="delivery" EntityType="Self.delivery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="goods" EntityType="Self.goods" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="person" EntityType="Self.person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="person_benefits" EntityType="Self.person_benefits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="position" EntityType="Self.position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="storage" EntityType="Self.storage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="supplier" EntityType="Self.supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="workers" EntityType="Self.workers" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__delivery__goodsN__160F4887" Association="Self.FK__delivery__goodsN__160F4887">
+            <End Role="goods" EntitySet="goods" />
+            <End Role="delivery" EntitySet="delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__delivery__storag__18EBB532" Association="Self.FK__delivery__storag__18EBB532">
+            <End Role="storage" EntitySet="storage" />
+            <End Role="delivery" EntitySet="delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__delivery__suppli__17036CC0" Association="Self.FK__delivery__suppli__17036CC0">
+            <End Role="supplier" EntitySet="supplier" />
+            <End Role="delivery" EntitySet="delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__delivery__worker__17F790F9" Association="Self.FK__delivery__worker__17F790F9">
+            <End Role="workers" EntitySet="workers" />
+            <End Role="delivery" EntitySet="delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__person_be__benef__02FC7413" Association="Self.FK__person_be__benef__02FC7413">
+            <End Role="benefits" EntitySet="benefits" />
+            <End Role="person_benefits" EntitySet="person_benefits" />
+          </AssociationSet>
+          <AssociationSet Name="FK__person_be__perso__03F0984C" Association="Self.FK__person_be__perso__03F0984C">
+            <End Role="person" EntitySet="person" />
+            <End Role="person_benefits" EntitySet="person_benefits" />
+          </AssociationSet>
+          <AssociationSet Name="FK__workers__cechNUM__59FA5E80" Association="Self.FK__workers__cechNUM__59FA5E80">
+            <End Role="cech" EntitySet="cech" />
+            <End Role="workers" EntitySet="workers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__workers__personN__5812160E" Association="Self.FK__workers__personN__5812160E">
+            <End Role="person" EntitySet="person" />
+            <End Role="workers" EntitySet="workers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__workers__positio__59063A47" Association="Self.FK__workers__positio__59063A47">
+            <End Role="position" EntitySet="position" />
+            <End Role="workers" EntitySet="workers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DepartmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="benefits">
+          <Key>
+            <PropertyRef Name="benefitsNUM" />
+          </Key>
+          <Property Name="benefitsNUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="benefitsNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="benefitsDESCRIPTION" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="benefitsKIND" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="person_benefits" Relationship="Self.FK__person_be__benef__02FC7413" FromRole="benefits" ToRole="person_benefits" />
+        </EntityType>
+        <EntityType Name="cech">
+          <Key>
+            <PropertyRef Name="cechNUM" />
+          </Key>
+          <Property Name="cechNUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cechNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="workers" Relationship="Self.FK__workers__cechNUM__59FA5E80" FromRole="cech" ToRole="workers" />
+        </EntityType>
+        <EntityType Name="delivery">
+          <Key>
+            <PropertyRef Name="deliveryNUM" />
+          </Key>
+          <Property Name="deliveryNUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="deliveryDATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="goodsCOUNT" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="goodsNUM" Type="Int32" Nullable="false" />
+          <Property Name="supplierNUM" Type="Int32" Nullable="false" />
+          <Property Name="workersNUM" Type="Int32" Nullable="false" />
+          <Property Name="storageNUM" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="goods" Relationship="Self.FK__delivery__goodsN__160F4887" FromRole="delivery" ToRole="goods" />
+          <NavigationProperty Name="storage" Relationship="Self.FK__delivery__storag__18EBB532" FromRole="delivery" ToRole="storage" />
+          <NavigationProperty Name="supplier" Relationship="Self.FK__delivery__suppli__17036CC0" FromRole="delivery" ToRole="supplier" />
+          <NavigationProperty Name="workers" Relationship="Self.FK__delivery__worker__17F790F9" FromRole="delivery" ToRole="workers" />
+        </EntityType>
+        <EntityType Name="goods">
+          <Key>
+            <PropertyRef Name="goodsNUM" />
+          </Key>
+          <Property Name="goodsNUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="goodsNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="goodsPRICE" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="delivery" Relationship="Self.FK__delivery__goodsN__160F4887" FromRole="goods" ToRole="delivery" />
+        </EntityType>
+        <EntityType Name="person">
+          <Key>
+            <PropertyRef Name="personNUM" />
+          </Key>
+          <Property Name="personNUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="personNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="personPASPORT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="personIDCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="personAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="personBirth" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="person_benefits" Relationship="Self.FK__person_be__perso__03F0984C" FromRole="person" ToRole="person_benefits" />
+          <NavigationProperty Name="workers" Relationship="Self.FK__workers__personN__5812160E" FromRole="person" ToRole="workers" />
+        </EntityType>
+        <EntityType Name="person_benefits">
+          <Key>
+            <PropertyRef Name="person_benefitsNUM" />
+          </Key>
+          <Property Name="person_benefitsNUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="benefitsNUM" Type="Int32" />
+          <Property Name="personNUM" Type="Int32" />
+          <Property Name="person_benefitsSTART" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="person_benefitsEND" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="benefits" Relationship="Self.FK__person_be__benef__02FC7413" FromRole="person_benefits" ToRole="benefits" />
+          <NavigationProperty Name="person" Relationship="Self.FK__person_be__perso__03F0984C" FromRole="person_benefits" ToRole="person" />
+        </EntityType>
+        <EntityType Name="position">
+          <Key>
+            <PropertyRef Name="positionNUM" />
+          </Key>
+          <Property Name="positionNUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="positionNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="positionSALARY" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <NavigationProperty Name="workers" Relationship="Self.FK__workers__positio__59063A47" FromRole="position" ToRole="workers" />
+        </EntityType>
+        <EntityType Name="storage">
+          <Key>
+            <PropertyRef Name="storageNUM" />
+          </Key>
+          <Property Name="storageNUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="storageNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="storageADDRESS" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="delivery" Relationship="Self.FK__delivery__storag__18EBB532" FromRole="storage" ToRole="delivery" />
+        </EntityType>
+        <EntityType Name="supplier">
+          <Key>
+            <PropertyRef Name="supplierNUM" />
+          </Key>
+          <Property Name="supplierNUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="supplierNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="supplierADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="supplierContacts" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="delivery" Relationship="Self.FK__delivery__suppli__17036CC0" FromRole="supplier" ToRole="delivery" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="workers">
+          <Key>
+            <PropertyRef Name="workersNUM" />
+          </Key>
+          <Property Name="workersNUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="workersSTART" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="workersEND" Type="DateTime" Precision="3" />
+          <Property Name="personNUM" Type="Int32" Nullable="false" />
+          <Property Name="positionNUM" Type="Int32" Nullable="false" />
+          <Property Name="cechNUM" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="cech" Relationship="Self.FK__workers__cechNUM__59FA5E80" FromRole="workers" ToRole="cech" />
+          <NavigationProperty Name="delivery" Relationship="Self.FK__delivery__worker__17F790F9" FromRole="workers" ToRole="delivery" />
+          <NavigationProperty Name="person" Relationship="Self.FK__workers__personN__5812160E" FromRole="workers" ToRole="person" />
+          <NavigationProperty Name="position" Relationship="Self.FK__workers__positio__59063A47" FromRole="workers" ToRole="position" />
+        </EntityType>
+        <Association Name="FK__person_be__benef__02FC7413">
+          <End Role="benefits" Type="Self.benefits" Multiplicity="0..1" />
+          <End Role="person_benefits" Type="Self.person_benefits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="benefits">
+              <PropertyRef Name="benefitsNUM" />
+            </Principal>
+            <Dependent Role="person_benefits">
+              <PropertyRef Name="benefitsNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__workers__cechNUM__59FA5E80">
+          <End Role="cech" Type="Self.cech" Multiplicity="1" />
+          <End Role="workers" Type="Self.workers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cech">
+              <PropertyRef Name="cechNUM" />
+            </Principal>
+            <Dependent Role="workers">
+              <PropertyRef Name="cechNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__delivery__goodsN__160F4887">
+          <End Role="goods" Type="Self.goods" Multiplicity="1" />
+          <End Role="delivery" Type="Self.delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="goods">
+              <PropertyRef Name="goodsNUM" />
+            </Principal>
+            <Dependent Role="delivery">
+              <PropertyRef Name="goodsNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__delivery__storag__18EBB532">
+          <End Role="storage" Type="Self.storage" Multiplicity="1" />
+          <End Role="delivery" Type="Self.delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="storage">
+              <PropertyRef Name="storageNUM" />
+            </Principal>
+            <Dependent Role="delivery">
+              <PropertyRef Name="storageNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__delivery__suppli__17036CC0">
+          <End Role="supplier" Type="Self.supplier" Multiplicity="1" />
+          <End Role="delivery" Type="Self.delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="supplier">
+              <PropertyRef Name="supplierNUM" />
+            </Principal>
+            <Dependent Role="delivery">
+              <PropertyRef Name="supplierNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__delivery__worker__17F790F9">
+          <End Role="workers" Type="Self.workers" Multiplicity="1" />
+          <End Role="delivery" Type="Self.delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="workers">
+              <PropertyRef Name="workersNUM" />
+            </Principal>
+            <Dependent Role="delivery">
+              <PropertyRef Name="workersNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__person_be__perso__03F0984C">
+          <End Role="person" Type="Self.person" Multiplicity="0..1" />
+          <End Role="person_benefits" Type="Self.person_benefits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="person">
+              <PropertyRef Name="personNUM" />
+            </Principal>
+            <Dependent Role="person_benefits">
+              <PropertyRef Name="personNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__workers__personN__5812160E">
+          <End Role="person" Type="Self.person" Multiplicity="1" />
+          <End Role="workers" Type="Self.workers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="person">
+              <PropertyRef Name="personNUM" />
+            </Principal>
+            <Dependent Role="workers">
+              <PropertyRef Name="personNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__workers__positio__59063A47">
+          <End Role="position" Type="Self.position" Multiplicity="1" />
+          <End Role="workers" Type="Self.workers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="position">
+              <PropertyRef Name="positionNUM" />
+            </Principal>
+            <Dependent Role="workers">
+              <PropertyRef Name="positionNUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DepartmentEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="benefits" EntityType="Self.benefits" />
+          <EntitySet Name="cech" EntityType="Self.cech" />
+          <EntitySet Name="delivery" EntityType="Self.delivery" />
+          <EntitySet Name="goods" EntityType="Self.goods" />
+          <EntitySet Name="person" EntityType="Self.person" />
+          <EntitySet Name="person_benefits" EntityType="Self.person_benefits" />
+          <EntitySet Name="position" EntityType="Self.position" />
+          <EntitySet Name="storage" EntityType="Self.storage" />
+          <EntitySet Name="supplier" EntityType="Self.supplier" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="workers" EntityType="Self.workers" />
+          <AssociationSet Name="FK__person_be__benef__02FC7413" Association="Self.FK__person_be__benef__02FC7413">
+            <End Role="benefits" EntitySet="benefits" />
+            <End Role="person_benefits" EntitySet="person_benefits" />
+          </AssociationSet>
+          <AssociationSet Name="FK__workers__cechNUM__59FA5E80" Association="Self.FK__workers__cechNUM__59FA5E80">
+            <End Role="cech" EntitySet="cech" />
+            <End Role="workers" EntitySet="workers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__delivery__goodsN__160F4887" Association="Self.FK__delivery__goodsN__160F4887">
+            <End Role="goods" EntitySet="goods" />
+            <End Role="delivery" EntitySet="delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__delivery__storag__18EBB532" Association="Self.FK__delivery__storag__18EBB532">
+            <End Role="storage" EntitySet="storage" />
+            <End Role="delivery" EntitySet="delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__delivery__suppli__17036CC0" Association="Self.FK__delivery__suppli__17036CC0">
+            <End Role="supplier" EntitySet="supplier" />
+            <End Role="delivery" EntitySet="delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__delivery__worker__17F790F9" Association="Self.FK__delivery__worker__17F790F9">
+            <End Role="workers" EntitySet="workers" />
+            <End Role="delivery" EntitySet="delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__person_be__perso__03F0984C" Association="Self.FK__person_be__perso__03F0984C">
+            <End Role="person" EntitySet="person" />
+            <End Role="person_benefits" EntitySet="person_benefits" />
+          </AssociationSet>
+          <AssociationSet Name="FK__workers__personN__5812160E" Association="Self.FK__workers__personN__5812160E">
+            <End Role="person" EntitySet="person" />
+            <End Role="workers" EntitySet="workers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__workers__positio__59063A47" Association="Self.FK__workers__positio__59063A47">
+            <End Role="position" EntitySet="position" />
+            <End Role="workers" EntitySet="workers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DepartmentModelStoreContainer" CdmEntityContainer="DepartmentEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="DepartmentModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="benefits">
+            <EntityTypeMapping TypeName="DepartmentModel.benefits">
+              <MappingFragment StoreEntitySet="benefits">
+                <ScalarProperty Name="benefitsNUM" ColumnName="benefitsNUM" />
+                <ScalarProperty Name="benefitsNAME" ColumnName="benefitsNAME" />
+                <ScalarProperty Name="benefitsDESCRIPTION" ColumnName="benefitsDESCRIPTION" />
+                <ScalarProperty Name="benefitsKIND" ColumnName="benefitsKIND" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cech">
+            <EntityTypeMapping TypeName="DepartmentModel.cech">
+              <MappingFragment StoreEntitySet="cech">
+                <ScalarProperty Name="cechNUM" ColumnName="cechNUM" />
+                <ScalarProperty Name="cechNAME" ColumnName="cechNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="delivery">
+            <EntityTypeMapping TypeName="DepartmentModel.delivery">
+              <MappingFragment StoreEntitySet="delivery">
+                <ScalarProperty Name="deliveryNUM" ColumnName="deliveryNUM" />
+                <ScalarProperty Name="deliveryDATE" ColumnName="deliveryDATE" />
+                <ScalarProperty Name="goodsCOUNT" ColumnName="goodsCOUNT" />
+                <ScalarProperty Name="goodsNUM" ColumnName="goodsNUM" />
+                <ScalarProperty Name="supplierNUM" ColumnName="supplierNUM" />
+                <ScalarProperty Name="workersNUM" ColumnName="workersNUM" />
+                <ScalarProperty Name="storageNUM" ColumnName="storageNUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="goods">
+            <EntityTypeMapping TypeName="DepartmentModel.goods">
+              <MappingFragment StoreEntitySet="goods">
+                <ScalarProperty Name="goodsNUM" ColumnName="goodsNUM" />
+                <ScalarProperty Name="goodsNAME" ColumnName="goodsNAME" />
+                <ScalarProperty Name="goodsPRICE" ColumnName="goodsPRICE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="person">
+            <EntityTypeMapping TypeName="DepartmentModel.person">
+              <MappingFragment StoreEntitySet="person">
+                <ScalarProperty Name="personNUM" ColumnName="personNUM" />
+                <ScalarProperty Name="personNAME" ColumnName="personNAME" />
+                <ScalarProperty Name="personPASPORT" ColumnName="personPASPORT" />
+                <ScalarProperty Name="personIDCode" ColumnName="personIDCode" />
+                <ScalarProperty Name="personAddress" ColumnName="personAddress" />
+                <ScalarProperty Name="personBirth" ColumnName="personBirth" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="person_benefits">
+            <EntityTypeMapping TypeName="DepartmentModel.person_benefits">
+              <MappingFragment StoreEntitySet="person_benefits">
+                <ScalarProperty Name="person_benefitsNUM" ColumnName="person_benefitsNUM" />
+                <ScalarProperty Name="benefitsNUM" ColumnName="benefitsNUM" />
+                <ScalarProperty Name="personNUM" ColumnName="personNUM" />
+                <ScalarProperty Name="person_benefitsSTART" ColumnName="person_benefitsSTART" />
+                <ScalarProperty Name="person_benefitsEND" ColumnName="person_benefitsEND" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="position">
+            <EntityTypeMapping TypeName="DepartmentModel.position">
+              <MappingFragment StoreEntitySet="position">
+                <ScalarProperty Name="positionNUM" ColumnName="positionNUM" />
+                <ScalarProperty Name="positionNAME" ColumnName="positionNAME" />
+                <ScalarProperty Name="positionSALARY" ColumnName="positionSALARY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="storage">
+            <EntityTypeMapping TypeName="DepartmentModel.storage">
+              <MappingFragment StoreEntitySet="storage">
+                <ScalarProperty Name="storageNUM" ColumnName="storageNUM" />
+                <ScalarProperty Name="storageNAME" ColumnName="storageNAME" />
+                <ScalarProperty Name="storageADDRESS" ColumnName="storageADDRESS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="supplier">
+            <EntityTypeMapping TypeName="DepartmentModel.supplier">
+              <MappingFragment StoreEntitySet="supplier">
+                <ScalarProperty Name="supplierNUM" ColumnName="supplierNUM" />
+                <ScalarProperty Name="supplierNAME" ColumnName="supplierNAME" />
+                <ScalarProperty Name="supplierADDRESS" ColumnName="supplierADDRESS" />
+                <ScalarProperty Name="supplierContacts" ColumnName="supplierContacts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DepartmentModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="workers">
+            <EntityTypeMapping TypeName="DepartmentModel.workers">
+              <MappingFragment StoreEntitySet="workers">
+                <ScalarProperty Name="workersNUM" ColumnName="workersNUM" />
+                <ScalarProperty Name="workersSTART" ColumnName="workersSTART" />
+                <ScalarProperty Name="workersEND" ColumnName="workersEND" />
+                <ScalarProperty Name="personNUM" ColumnName="personNUM" />
+                <ScalarProperty Name="positionNUM" ColumnName="positionNUM" />
+                <ScalarProperty Name="cechNUM" ColumnName="cechNUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
