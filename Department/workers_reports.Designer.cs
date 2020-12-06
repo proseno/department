@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(workers_reports));
             this.workersFullInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Procedures = new Department.Procedures();
             this.workers_reports_menu = new System.Windows.Forms.MenuStrip();
             this.common_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.onJob_category = new System.Windows.Forms.ToolStripMenuItem();
+            this.perPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.workersFullInfoTableAdapter = new Department.ProceduresTableAdapters.workersFullInfoTableAdapter();
             this.workers_to_one_personBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.workers_to_one_personTableAdapter = new Department.ProceduresTableAdapters.workers_to_one_personTableAdapter();
-            this.perPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.workersFullInfoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Procedures)).BeginInit();
             this.workers_reports_menu.SuspendLayout();
@@ -79,16 +80,23 @@
             // onJob_category
             // 
             this.onJob_category.Name = "onJob_category";
-            this.onJob_category.Size = new System.Drawing.Size(224, 26);
+            this.onJob_category.Size = new System.Drawing.Size(180, 26);
             this.onJob_category.Text = "All workers";
             this.onJob_category.Click += new System.EventHandler(this.onJob_category_Click);
+            // 
+            // perPersonToolStripMenuItem
+            // 
+            this.perPersonToolStripMenuItem.Name = "perPersonToolStripMenuItem";
+            this.perPersonToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.perPersonToolStripMenuItem.Text = "Now working";
+            this.perPersonToolStripMenuItem.Click += new System.EventHandler(this.perPersonToolStripMenuItem_Click);
             // 
             // viewer
             // 
             this.viewer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            reportDataSource3.Name = "workers_full_report";
-            reportDataSource3.Value = this.workersFullInfoBindingSource;
-            this.viewer.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource1.Name = "workers_full_report";
+            reportDataSource1.Value = this.workersFullInfoBindingSource;
+            this.viewer.LocalReport.DataSources.Add(reportDataSource1);
             this.viewer.LocalReport.ReportEmbeddedResource = "Department.workers_full_report.rdlc";
             this.viewer.Location = new System.Drawing.Point(13, 32);
             this.viewer.Name = "viewer";
@@ -109,13 +117,6 @@
             // 
             this.workers_to_one_personTableAdapter.ClearBeforeFill = true;
             // 
-            // perPersonToolStripMenuItem
-            // 
-            this.perPersonToolStripMenuItem.Name = "perPersonToolStripMenuItem";
-            this.perPersonToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.perPersonToolStripMenuItem.Text = "Now working";
-            this.perPersonToolStripMenuItem.Click += new System.EventHandler(this.perPersonToolStripMenuItem_Click);
-            // 
             // workers_reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -123,9 +124,10 @@
             this.ClientSize = new System.Drawing.Size(1126, 561);
             this.Controls.Add(this.viewer);
             this.Controls.Add(this.workers_reports_menu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.workers_reports_menu;
             this.Name = "workers_reports";
-            this.Text = "workers_reports";
+            this.Text = "workers: reports";
             this.Load += new System.EventHandler(this.workers_reports_Load);
             ((System.ComponentModel.ISupportInitialize)(this.workersFullInfoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Procedures)).EndInit();

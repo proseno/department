@@ -30,17 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(person_benefits_reports));
+            this.person_benefitsFullInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Procedures = new Department.Procedures();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.commonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allBenefitsPerPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.Procedures = new Department.Procedures();
-            this.person_benefitsFullInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.person_benefitsFullInfoTableAdapter = new Department.ProceduresTableAdapters.person_benefitsFullInfoTableAdapter();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.person_benefitsFullInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // person_benefitsFullInfoBindingSource
+            // 
+            this.person_benefitsFullInfoBindingSource.DataMember = "person_benefitsFullInfo";
+            this.person_benefitsFullInfoBindingSource.DataSource = this.Procedures;
+            // 
+            // Procedures
+            // 
+            this.Procedures.DataSetName = "Procedures";
+            this.Procedures.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // menuStrip1
             // 
@@ -49,7 +60,7 @@
             this.commonToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1000, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -58,7 +69,7 @@
             this.commonToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.allBenefitsPerPersonToolStripMenuItem});
             this.commonToolStripMenuItem.Name = "commonToolStripMenuItem";
-            this.commonToolStripMenuItem.Size = new System.Drawing.Size(84, 34);
+            this.commonToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.commonToolStripMenuItem.Text = "Common";
             // 
             // allBenefitsPerPersonToolStripMenuItem
@@ -81,16 +92,6 @@
             this.viewer.Size = new System.Drawing.Size(776, 407);
             this.viewer.TabIndex = 1;
             // 
-            // Procedures
-            // 
-            this.Procedures.DataSetName = "Procedures";
-            this.Procedures.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // person_benefitsFullInfoBindingSource
-            // 
-            this.person_benefitsFullInfoBindingSource.DataMember = "person_benefitsFullInfo";
-            this.person_benefitsFullInfoBindingSource.DataSource = this.Procedures;
-            // 
             // person_benefitsFullInfoTableAdapter
             // 
             this.person_benefitsFullInfoTableAdapter.ClearBeforeFill = true;
@@ -102,14 +103,15 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.viewer);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "person_benefits_reports";
-            this.Text = "person_benefits_reports";
+            this.Text = "person benefits: reports";
             this.Load += new System.EventHandler(this.person_benefits_reports_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.person_benefitsFullInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.person_benefitsFullInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

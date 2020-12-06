@@ -160,21 +160,6 @@ namespace Department
             return false;
         }
 
-        private void tempWriter()
-        {
-            //write default login, password and status to json file
-            authenticationInfo info = new authenticationInfo() { Login = "admin", Password = "admin", Status = 1 };
-            info.Login = MD5Hash(info.Login);
-            info.Password = MD5Hash(info.Password);
-            List<authenticationInfo> info_list = new List<authenticationInfo>();
-            info_list.Add(info);
-            using (StreamWriter file = File.CreateText(@"info.json"))
-            {
-                JsonSerializer jsonSerializer = new JsonSerializer();
-                jsonSerializer.Serialize(file, info_list);
-            }
-        }
-
         private static string MD5Hash(string info)
         {
             using (MD5 md5 = MD5.Create())

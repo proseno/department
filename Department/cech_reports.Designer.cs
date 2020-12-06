@@ -30,17 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cech_reports));
+            this.cechFullInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Procedures = new Department.Procedures();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.commonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allCechToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.Procedures = new Department.Procedures();
-            this.cechFullInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cechFullInfoTableAdapter = new Department.ProceduresTableAdapters.cechFullInfoTableAdapter();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cechFullInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // cechFullInfoBindingSource
+            // 
+            this.cechFullInfoBindingSource.DataMember = "cechFullInfo";
+            this.cechFullInfoBindingSource.DataSource = this.Procedures;
+            // 
+            // Procedures
+            // 
+            this.Procedures.DataSetName = "Procedures";
+            this.Procedures.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // menuStrip1
             // 
@@ -64,7 +75,7 @@
             // allCechToolStripMenuItem
             // 
             this.allCechToolStripMenuItem.Name = "allCechToolStripMenuItem";
-            this.allCechToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.allCechToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.allCechToolStripMenuItem.Text = "All cech";
             this.allCechToolStripMenuItem.Click += new System.EventHandler(this.allCechToolStripMenuItem_Click);
             // 
@@ -81,16 +92,6 @@
             this.viewer.Size = new System.Drawing.Size(897, 433);
             this.viewer.TabIndex = 1;
             // 
-            // Procedures
-            // 
-            this.Procedures.DataSetName = "Procedures";
-            this.Procedures.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cechFullInfoBindingSource
-            // 
-            this.cechFullInfoBindingSource.DataMember = "cechFullInfo";
-            this.cechFullInfoBindingSource.DataSource = this.Procedures;
-            // 
             // cechFullInfoTableAdapter
             // 
             this.cechFullInfoTableAdapter.ClearBeforeFill = true;
@@ -102,14 +103,15 @@
             this.ClientSize = new System.Drawing.Size(921, 476);
             this.Controls.Add(this.viewer);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "cech_reports";
-            this.Text = "cech_reports";
+            this.Text = "cech: reports";
             this.Load += new System.EventHandler(this.cech_reports_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.cechFullInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cechFullInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

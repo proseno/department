@@ -30,17 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(goods_reports));
+            this.goodsFullInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Procedures = new Department.Procedures();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.commonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allGoodsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.Procedures = new Department.Procedures();
-            this.goodsFullInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.goodsFullInfoTableAdapter = new Department.ProceduresTableAdapters.goodsFullInfoTableAdapter();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsFullInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // goodsFullInfoBindingSource
+            // 
+            this.goodsFullInfoBindingSource.DataMember = "goodsFullInfo";
+            this.goodsFullInfoBindingSource.DataSource = this.Procedures;
+            // 
+            // Procedures
+            // 
+            this.Procedures.DataSetName = "Procedures";
+            this.Procedures.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // menuStrip1
             // 
@@ -64,7 +75,7 @@
             // allGoodsToolStripMenuItem
             // 
             this.allGoodsToolStripMenuItem.Name = "allGoodsToolStripMenuItem";
-            this.allGoodsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.allGoodsToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
             this.allGoodsToolStripMenuItem.Text = "All goods";
             this.allGoodsToolStripMenuItem.Click += new System.EventHandler(this.allGoodsToolStripMenuItem_Click);
             // 
@@ -81,16 +92,6 @@
             this.viewer.Size = new System.Drawing.Size(886, 465);
             this.viewer.TabIndex = 1;
             // 
-            // Procedures
-            // 
-            this.Procedures.DataSetName = "Procedures";
-            this.Procedures.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // goodsFullInfoBindingSource
-            // 
-            this.goodsFullInfoBindingSource.DataMember = "goodsFullInfo";
-            this.goodsFullInfoBindingSource.DataSource = this.Procedures;
-            // 
             // goodsFullInfoTableAdapter
             // 
             this.goodsFullInfoTableAdapter.ClearBeforeFill = true;
@@ -102,14 +103,15 @@
             this.ClientSize = new System.Drawing.Size(910, 508);
             this.Controls.Add(this.viewer);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "goods_reports";
-            this.Text = "goods_reports";
+            this.Text = "goods: reports";
             this.Load += new System.EventHandler(this.goods_reports_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.goodsFullInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.goodsFullInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

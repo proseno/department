@@ -30,17 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(storage_reports));
+            this.storageFullInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Procedures = new Department.Procedures();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.commonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allStoragesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.Procedures = new Department.Procedures();
-            this.storageFullInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.storageFullInfoTableAdapter = new Department.ProceduresTableAdapters.storageFullInfoTableAdapter();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageFullInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // storageFullInfoBindingSource
+            // 
+            this.storageFullInfoBindingSource.DataMember = "storageFullInfo";
+            this.storageFullInfoBindingSource.DataSource = this.Procedures;
+            // 
+            // Procedures
+            // 
+            this.Procedures.DataSetName = "Procedures";
+            this.Procedures.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // menuStrip1
             // 
@@ -64,7 +75,7 @@
             // allStoragesToolStripMenuItem
             // 
             this.allStoragesToolStripMenuItem.Name = "allStoragesToolStripMenuItem";
-            this.allStoragesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.allStoragesToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.allStoragesToolStripMenuItem.Text = "All storages";
             this.allStoragesToolStripMenuItem.Click += new System.EventHandler(this.allStoragesToolStripMenuItem_Click);
             // 
@@ -81,16 +92,6 @@
             this.viewer.Size = new System.Drawing.Size(850, 463);
             this.viewer.TabIndex = 1;
             // 
-            // Procedures
-            // 
-            this.Procedures.DataSetName = "Procedures";
-            this.Procedures.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // storageFullInfoBindingSource
-            // 
-            this.storageFullInfoBindingSource.DataMember = "storageFullInfo";
-            this.storageFullInfoBindingSource.DataSource = this.Procedures;
-            // 
             // storageFullInfoTableAdapter
             // 
             this.storageFullInfoTableAdapter.ClearBeforeFill = true;
@@ -102,14 +103,15 @@
             this.ClientSize = new System.Drawing.Size(874, 506);
             this.Controls.Add(this.viewer);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "storage_reports";
-            this.Text = "storage_reports";
+            this.Text = "storage: reports";
             this.Load += new System.EventHandler(this.storage_reports_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.storageFullInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.storageFullInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

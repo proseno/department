@@ -43,5 +43,7 @@ namespace Department
         public static Nullable<int> delivery_supplierNUM;
         public static Nullable<int> delivery_storageNUM;
 
+
+        public static string status;
     }
 }

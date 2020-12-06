@@ -30,17 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(supplier_reports));
+            this.supplierFullInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Procedures = new Department.Procedures();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.commonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allSuppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.Procedures = new Department.Procedures();
-            this.supplierFullInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supplierFullInfoTableAdapter = new Department.ProceduresTableAdapters.supplierFullInfoTableAdapter();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierFullInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // supplierFullInfoBindingSource
+            // 
+            this.supplierFullInfoBindingSource.DataMember = "supplierFullInfo";
+            this.supplierFullInfoBindingSource.DataSource = this.Procedures;
+            // 
+            // Procedures
+            // 
+            this.Procedures.DataSetName = "Procedures";
+            this.Procedures.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // menuStrip1
             // 
@@ -49,7 +60,7 @@
             this.commonToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1141, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(913, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -58,13 +69,13 @@
             this.commonToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.allSuppliersToolStripMenuItem});
             this.commonToolStripMenuItem.Name = "commonToolStripMenuItem";
-            this.commonToolStripMenuItem.Size = new System.Drawing.Size(84, 34);
+            this.commonToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.commonToolStripMenuItem.Text = "Common";
             // 
             // allSuppliersToolStripMenuItem
             // 
             this.allSuppliersToolStripMenuItem.Name = "allSuppliersToolStripMenuItem";
-            this.allSuppliersToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.allSuppliersToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
             this.allSuppliersToolStripMenuItem.Text = "All suppliers";
             this.allSuppliersToolStripMenuItem.Click += new System.EventHandler(this.allSuppliersToolStripMenuItem_Click);
             // 
@@ -81,16 +92,6 @@
             this.viewer.Size = new System.Drawing.Size(889, 491);
             this.viewer.TabIndex = 1;
             // 
-            // Procedures
-            // 
-            this.Procedures.DataSetName = "Procedures";
-            this.Procedures.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // supplierFullInfoBindingSource
-            // 
-            this.supplierFullInfoBindingSource.DataMember = "supplierFullInfo";
-            this.supplierFullInfoBindingSource.DataSource = this.Procedures;
-            // 
             // supplierFullInfoTableAdapter
             // 
             this.supplierFullInfoTableAdapter.ClearBeforeFill = true;
@@ -102,14 +103,15 @@
             this.ClientSize = new System.Drawing.Size(913, 534);
             this.Controls.Add(this.viewer);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "supplier_reports";
-            this.Text = "supplier_reports";
+            this.Text = "supplier: reports";
             this.Load += new System.EventHandler(this.supplier_reports_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.supplierFullInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierFullInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

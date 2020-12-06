@@ -30,17 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(benefits_reports));
+            this.benefitsFullInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Procedures = new Department.Procedures();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.commonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allBenefitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.Procedures = new Department.Procedures();
-            this.benefitsFullInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.benefitsFullInfoTableAdapter = new Department.ProceduresTableAdapters.benefitsFullInfoTableAdapter();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.benefitsFullInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // benefitsFullInfoBindingSource
+            // 
+            this.benefitsFullInfoBindingSource.DataMember = "benefitsFullInfo";
+            this.benefitsFullInfoBindingSource.DataSource = this.Procedures;
+            // 
+            // Procedures
+            // 
+            this.Procedures.DataSetName = "Procedures";
+            this.Procedures.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // menuStrip1
             // 
@@ -64,7 +75,7 @@
             // allBenefitsToolStripMenuItem
             // 
             this.allBenefitsToolStripMenuItem.Name = "allBenefitsToolStripMenuItem";
-            this.allBenefitsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.allBenefitsToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.allBenefitsToolStripMenuItem.Text = "All benefits";
             this.allBenefitsToolStripMenuItem.Click += new System.EventHandler(this.allBenefitsToolStripMenuItem_Click);
             // 
@@ -81,16 +92,6 @@
             this.viewer.Size = new System.Drawing.Size(968, 460);
             this.viewer.TabIndex = 1;
             // 
-            // Procedures
-            // 
-            this.Procedures.DataSetName = "Procedures";
-            this.Procedures.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // benefitsFullInfoBindingSource
-            // 
-            this.benefitsFullInfoBindingSource.DataMember = "benefitsFullInfo";
-            this.benefitsFullInfoBindingSource.DataSource = this.Procedures;
-            // 
             // benefitsFullInfoTableAdapter
             // 
             this.benefitsFullInfoTableAdapter.ClearBeforeFill = true;
@@ -102,14 +103,15 @@
             this.ClientSize = new System.Drawing.Size(992, 503);
             this.Controls.Add(this.viewer);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "benefits_reports";
-            this.Text = "benefits_reports";
+            this.Text = "benefits: reports";
             this.Load += new System.EventHandler(this.benefits_reports_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.benefitsFullInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Procedures)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.benefitsFullInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

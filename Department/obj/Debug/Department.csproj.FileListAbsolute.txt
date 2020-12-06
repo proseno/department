@@ -166,3 +166,4 @@ C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\Department.good
 C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\Department.storage_reports.resources
 C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\Department.supplier_reports.resources
 C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\Department.person_benefits_reports.resources
+C:\Users\acer\Desktop\Studing\C#\Department\Department\obj\Debug\Department.account_management.resources
