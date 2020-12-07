@@ -60,7 +60,6 @@
             this.connect_button.Text = "Connect";
             this.connect_button.UseVisualStyleBackColor = true;
             this.connect_button.Click += new System.EventHandler(this.connect_button_Click);
-            this.connect_button.Paint += new System.Windows.Forms.PaintEventHandler(this.connect_button_Paint);
             // 
             // login_textBox
             // 

@@ -41,7 +41,7 @@
             this.storage_table = new System.Windows.Forms.ToolStripMenuItem();
             this.supplier_table = new System.Windows.Forms.ToolStripMenuItem();
             this.delivery_table = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reports_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.workersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.benefitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +52,8 @@
             this.storageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personBenefitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accountManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountManage_menu = new System.Windows.Forms.ToolStripMenuItem();
+            this.hello_label = new System.Windows.Forms.Label();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,12 +62,12 @@
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tables_menu,
-            this.reportsToolStripMenuItem,
-            this.accountManagementToolStripMenuItem});
+            this.reports_menu,
+            this.accountManage_menu});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(14, 4, 0, 4);
-            this.menuStrip2.Size = new System.Drawing.Size(982, 32);
+            this.menuStrip2.Size = new System.Drawing.Size(665, 32);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -167,9 +168,9 @@
             this.delivery_table.Text = "Delivery";
             this.delivery_table.Click += new System.EventHandler(this.delivery_table_Click);
             // 
-            // reportsToolStripMenuItem
+            // reports_menu
             // 
-            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reports_menu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.workersToolStripMenuItem,
             this.peopleToolStripMenuItem,
             this.benefitsToolStripMenuItem,
@@ -180,9 +181,9 @@
             this.storageToolStripMenuItem,
             this.supplierToolStripMenuItem,
             this.personBenefitsToolStripMenuItem});
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
-            this.reportsToolStripMenuItem.Text = "Reports";
+            this.reports_menu.Name = "reports_menu";
+            this.reports_menu.Size = new System.Drawing.Size(74, 24);
+            this.reports_menu.Text = "Reports";
             // 
             // workersToolStripMenuItem
             // 
@@ -264,20 +265,32 @@
             this.personBenefitsToolStripMenuItem.Text = "Person benefits";
             this.personBenefitsToolStripMenuItem.Click += new System.EventHandler(this.personBenefitsToolStripMenuItem_Click);
             // 
-            // accountManagementToolStripMenuItem
+            // accountManage_menu
             // 
-            this.accountManagementToolStripMenuItem.Name = "accountManagementToolStripMenuItem";
-            this.accountManagementToolStripMenuItem.Size = new System.Drawing.Size(169, 24);
-            this.accountManagementToolStripMenuItem.Text = "Account management";
+            this.accountManage_menu.Name = "accountManage_menu";
+            this.accountManage_menu.Size = new System.Drawing.Size(169, 24);
+            this.accountManage_menu.Text = "Account management";
+            // 
+            // hello_label
+            // 
+            this.hello_label.AutoSize = true;
+            this.hello_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hello_label.Location = new System.Drawing.Point(12, 253);
+            this.hello_label.Name = "hello_label";
+            this.hello_label.Size = new System.Drawing.Size(200, 69);
+            this.hello_label.TabIndex = 2;
+            this.hello_label.Text = "Hello, ";
             // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 553);
+            this.ClientSize = new System.Drawing.Size(665, 331);
+            this.Controls.Add(this.hello_label);
             this.Controls.Add(this.menuStrip2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -304,7 +317,7 @@
         private System.Windows.Forms.ToolStripMenuItem storage_table;
         private System.Windows.Forms.ToolStripMenuItem supplier_table;
         private System.Windows.Forms.ToolStripMenuItem delivery_table;
-        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reports_menu;
         private System.Windows.Forms.ToolStripMenuItem workersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem peopleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem benefitsToolStripMenuItem;
@@ -315,6 +328,7 @@
         private System.Windows.Forms.ToolStripMenuItem storageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem personBenefitsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem accountManagementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accountManage_menu;
+        private System.Windows.Forms.Label hello_label;
     }
 }

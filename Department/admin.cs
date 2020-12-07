@@ -12,9 +12,57 @@ namespace Department
 {
     public partial class admin : Form
     {
-        public admin()
+        public admin(string status, string login)
         {
             InitializeComponent();
+            if (status != "1")
+            {
+                var tablesAndReports = status.Split('|');
+                string tablesString = tablesAndReports[0].Substring(3);
+                string reportsString = tablesAndReports[1].Substring(3);
+                var tables = tablesString.Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
+                var reports = reportsString.Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
+                foreach (ToolStripMenuItem item in tables_menu.DropDownItems)
+                {
+                    item.Visible = false;
+                }
+
+                foreach (ToolStripMenuItem item in reports_menu.DropDownItems)
+                {
+                    item.Visible = false;
+                }
+
+                accountManage_menu.Visible = false;
+
+                foreach (var table in tables)
+                {
+                    foreach (ToolStripMenuItem item in tables_menu.DropDownItems)
+                    {
+                        if (table == item.Text)
+                        {
+                            item.Visible = true;
+                        }
+                    }
+                }
+
+                foreach (var report in reports)
+                {
+                    foreach (ToolStripMenuItem item in reports_menu.DropDownItems)
+                    {
+                        if (report == item.Text)
+                        {
+                            item.Visible = true;
+                        }
+                    }
+                }
+
+                this.Text = login;
+                hello_label.Text += login;
+            }
+            else if(status == "1")
+            {
+                hello_label.Text += "oniichan";
+            }
         }
 
         private void admin_Load(object sender, EventArgs e)

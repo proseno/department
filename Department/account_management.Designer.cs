@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(account_management));
             this.login_label = new System.Windows.Forms.Label();
             this.password_label = new System.Windows.Forms.Label();
             this.functionality_label = new System.Windows.Forms.Label();
@@ -192,6 +193,7 @@
             this.Controls.Add(this.password_label);
             this.Controls.Add(this.login_label);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "account_management";
             this.Text = "Account management";
             this.ResumeLayout(false);

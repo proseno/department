@@ -14,22 +14,16 @@ using System.Runtime.Remoting.Messaging;
 
 namespace Department
 {
-
-
     public partial class Form1 : Form
     {
-        private enum Status
-        {
-            admin = 1,
-            user = 2
-        }
+        private string status = null;
+        private string login = null;
         private class authenticationInfo
         {
             public string Password { get; set; }
             public string Login { get; set; }
-            public int Status { get; set; }
+            public string Status { get; set; }
         }
-        private Status status = new Status();
         private static bool visible_button_switch = true;
 
         public Form1()
@@ -40,14 +34,12 @@ namespace Department
         private void visible_button_Paint(object sender, PaintEventArgs e)
         {
             visible_button.BackgroundImageLayout = ImageLayout.Stretch;
-           // visible_button.Size = new Size(34, 34);
         }
 
         private void visible_button_Click(object sender, EventArgs e)
         {
             if (visible_button_switch == true) 
             {
-               // visible_button.BackColor = Color.FromArgb(190, 190, 190);
                 visible_button_switch = false;
                 password_textBox.UseSystemPasswordChar = false;
                 this.ActiveControl = password_textBox;
@@ -55,7 +47,6 @@ namespace Department
             }
             else if (visible_button_switch == false)
             {
-               //visible_button.BackColor = Color.FromArgb(225, 225, 225);
                 visible_button_switch = true;
                 password_textBox.UseSystemPasswordChar = true;
                 this.ActiveControl = password_textBox;
@@ -70,11 +61,6 @@ namespace Department
             this.ActiveControl = login_textBox;
             password_textBox.UseSystemPasswordChar = true;
             
-        }
-
-        private void connect_button_Paint(object sender, PaintEventArgs e)
-        {
-           
         }
 
         private void login_textBox_KeyDown(object sender, KeyEventArgs e)
@@ -102,18 +88,19 @@ namespace Department
             {
                 error_img.Visible = false;
                 error_label.Visible = false;
-                switch (status)
+
+                if (status != null || login != null)
                 {
-                    case Status.admin:
-                        admin admin = new admin();
-                        admin.Show();
-
-                        break;
-
-                    default:
-                        MessageBox.Show("Enter");
-                        break;
+                    admin admin = new admin(status, login);
+                    admin.Show();
                 }
+                else
+                {
+                    MessageBox.Show("Error! Incorrect account data");
+                }
+                login_textBox.Text = "";
+                password_textBox.Text = "";
+                this.ActiveControl = login_textBox;
             }
             else
             {
@@ -147,11 +134,12 @@ namespace Department
             }
 
 
-            foreach (var item in items)
+            foreach (authenticationInfo item in items)
             {
-                if(MD5Hash(login) == item.Login && MD5Hash(password) == item.Password)
+                if(login == item.Login && MD5Hash(password) == item.Password)
                 {
-                    status = (Status)item.Status;
+                    this.status = item.Status;
+                    this.login = item.Login;
                     return true;
                 }
 
