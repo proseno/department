@@ -22,6 +22,16 @@ namespace Department
                 string reportsString = tablesAndReports[1].Substring(3);
                 var tables = tablesString.Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
                 var reports = reportsString.Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
+                if (tablesString == "")
+                {
+                    tables_menu.Visible = false;
+                }
+                if (reportsString == "")
+                {
+
+                    reports_menu.Visible = false;
+                }
+
                 foreach (ToolStripMenuItem item in tables_menu.DropDownItems)
                 {
                     item.Visible = false;
@@ -31,7 +41,6 @@ namespace Department
                 {
                     item.Visible = false;
                 }
-
                 accountManage_menu.Visible = false;
 
                 foreach (var table in tables)
@@ -188,6 +197,12 @@ namespace Department
         {
             person_benefits_reports pbr = new person_benefits_reports();
             pbr.Show();
+        }
+
+        private void accountManage_menu_Click(object sender, EventArgs e)
+        {
+            account_management ac = new account_management();
+            ac.ShowDialog();
         }
     }
 }

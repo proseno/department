@@ -30,7 +30,7 @@ namespace Department
 
             this.workers_to_one_personTableAdapter.Fill(this.Procedures.workers_to_one_person);
             this.viewer.Reset();
-            ReportDataSource rds = new ReportDataSource("workers_to_one_person");
+            ReportDataSource rds = new ReportDataSource("workers_by_person");
             rds.Value = this.workers_to_one_personBindingSource;
             viewer.LocalReport.DataSources.Add(rds);
             viewer.LocalReport.ReportPath = @"C:\Users\acer\Desktop\Studing\C#\Department\Department\workers_by_person.rdlc";

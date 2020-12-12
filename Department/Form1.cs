@@ -91,8 +91,12 @@ namespace Department
 
                 if (status != null || login != null)
                 {
-                    admin admin = new admin(status, login);
-                    admin.Show();
+                    this.Hide();
+                    using (admin admin = new admin(status, login))
+                    {
+                        admin.ShowDialog();
+                    }
+                    this.Show();
                 }
                 else
                 {

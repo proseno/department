@@ -100,7 +100,7 @@
             // 
             this.position_table.Image = ((System.Drawing.Image)(resources.GetObject("position_table.Image")));
             this.position_table.Name = "position_table";
-            this.position_table.Size = new System.Drawing.Size(224, 26);
+            this.position_table.Size = new System.Drawing.Size(192, 26);
             this.position_table.Text = "Position";
             this.position_table.Click += new System.EventHandler(this.position_table_Click);
             // 
@@ -108,7 +108,7 @@
             // 
             this.workers_table.Image = ((System.Drawing.Image)(resources.GetObject("workers_table.Image")));
             this.workers_table.Name = "workers_table";
-            this.workers_table.Size = new System.Drawing.Size(224, 26);
+            this.workers_table.Size = new System.Drawing.Size(192, 26);
             this.workers_table.Text = "Workers";
             this.workers_table.Click += new System.EventHandler(this.workers_table_Click);
             // 
@@ -116,7 +116,7 @@
             // 
             this.benefits_table.Image = ((System.Drawing.Image)(resources.GetObject("benefits_table.Image")));
             this.benefits_table.Name = "benefits_table";
-            this.benefits_table.Size = new System.Drawing.Size(224, 26);
+            this.benefits_table.Size = new System.Drawing.Size(192, 26);
             this.benefits_table.Text = "Benefits";
             this.benefits_table.Click += new System.EventHandler(this.benefits_table_Click);
             // 
@@ -124,7 +124,7 @@
             // 
             this.personBenefits_table.Image = ((System.Drawing.Image)(resources.GetObject("personBenefits_table.Image")));
             this.personBenefits_table.Name = "personBenefits_table";
-            this.personBenefits_table.Size = new System.Drawing.Size(224, 26);
+            this.personBenefits_table.Size = new System.Drawing.Size(192, 26);
             this.personBenefits_table.Text = "Person benefits";
             this.personBenefits_table.Click += new System.EventHandler(this.personBenefits_table_Click);
             // 
@@ -132,7 +132,7 @@
             // 
             this.cech_table.Image = ((System.Drawing.Image)(resources.GetObject("cech_table.Image")));
             this.cech_table.Name = "cech_table";
-            this.cech_table.Size = new System.Drawing.Size(224, 26);
+            this.cech_table.Size = new System.Drawing.Size(192, 26);
             this.cech_table.Text = "Cech";
             this.cech_table.Click += new System.EventHandler(this.cech_table_Click);
             // 
@@ -140,7 +140,7 @@
             // 
             this.goods_table.Image = ((System.Drawing.Image)(resources.GetObject("goods_table.Image")));
             this.goods_table.Name = "goods_table";
-            this.goods_table.Size = new System.Drawing.Size(224, 26);
+            this.goods_table.Size = new System.Drawing.Size(192, 26);
             this.goods_table.Text = "Goods";
             this.goods_table.Click += new System.EventHandler(this.goods_table_Click);
             // 
@@ -148,7 +148,7 @@
             // 
             this.storage_table.Image = ((System.Drawing.Image)(resources.GetObject("storage_table.Image")));
             this.storage_table.Name = "storage_table";
-            this.storage_table.Size = new System.Drawing.Size(224, 26);
+            this.storage_table.Size = new System.Drawing.Size(192, 26);
             this.storage_table.Text = "Storage";
             this.storage_table.Click += new System.EventHandler(this.storage_table_Click);
             // 
@@ -156,7 +156,7 @@
             // 
             this.supplier_table.Image = ((System.Drawing.Image)(resources.GetObject("supplier_table.Image")));
             this.supplier_table.Name = "supplier_table";
-            this.supplier_table.Size = new System.Drawing.Size(224, 26);
+            this.supplier_table.Size = new System.Drawing.Size(192, 26);
             this.supplier_table.Text = "Supplier";
             this.supplier_table.Click += new System.EventHandler(this.supplier_table_Click);
             // 
@@ -164,7 +164,7 @@
             // 
             this.delivery_table.Image = ((System.Drawing.Image)(resources.GetObject("delivery_table.Image")));
             this.delivery_table.Name = "delivery_table";
-            this.delivery_table.Size = new System.Drawing.Size(224, 26);
+            this.delivery_table.Size = new System.Drawing.Size(192, 26);
             this.delivery_table.Text = "Delivery";
             this.delivery_table.Click += new System.EventHandler(this.delivery_table_Click);
             // 
@@ -189,7 +189,7 @@
             // 
             this.workersToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("workersToolStripMenuItem.Image")));
             this.workersToolStripMenuItem.Name = "workersToolStripMenuItem";
-            this.workersToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.workersToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.workersToolStripMenuItem.Text = "Workers";
             this.workersToolStripMenuItem.Click += new System.EventHandler(this.workersToolStripMenuItem_Click);
             // 
@@ -197,7 +197,7 @@
             // 
             this.peopleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("peopleToolStripMenuItem.Image")));
             this.peopleToolStripMenuItem.Name = "peopleToolStripMenuItem";
-            this.peopleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.peopleToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.peopleToolStripMenuItem.Text = "People";
             this.peopleToolStripMenuItem.Click += new System.EventHandler(this.peopleToolStripMenuItem_Click);
             // 
@@ -205,7 +205,7 @@
             // 
             this.benefitsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("benefitsToolStripMenuItem.Image")));
             this.benefitsToolStripMenuItem.Name = "benefitsToolStripMenuItem";
-            this.benefitsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.benefitsToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.benefitsToolStripMenuItem.Text = "Benefits";
             this.benefitsToolStripMenuItem.Click += new System.EventHandler(this.benefitsToolStripMenuItem_Click);
             // 
@@ -213,7 +213,7 @@
             // 
             this.cechToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cechToolStripMenuItem.Image")));
             this.cechToolStripMenuItem.Name = "cechToolStripMenuItem";
-            this.cechToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cechToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.cechToolStripMenuItem.Text = "Cech";
             this.cechToolStripMenuItem.Click += new System.EventHandler(this.cechToolStripMenuItem_Click);
             // 
@@ -221,7 +221,7 @@
             // 
             this.positionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("positionToolStripMenuItem.Image")));
             this.positionToolStripMenuItem.Name = "positionToolStripMenuItem";
-            this.positionToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.positionToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.positionToolStripMenuItem.Text = "Position";
             this.positionToolStripMenuItem.Click += new System.EventHandler(this.positionToolStripMenuItem_Click);
             // 
@@ -229,7 +229,7 @@
             // 
             this.deliveryToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deliveryToolStripMenuItem.Image")));
             this.deliveryToolStripMenuItem.Name = "deliveryToolStripMenuItem";
-            this.deliveryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.deliveryToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.deliveryToolStripMenuItem.Text = "Delivery";
             this.deliveryToolStripMenuItem.Click += new System.EventHandler(this.deliveryToolStripMenuItem_Click);
             // 
@@ -237,7 +237,7 @@
             // 
             this.goodsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("goodsToolStripMenuItem.Image")));
             this.goodsToolStripMenuItem.Name = "goodsToolStripMenuItem";
-            this.goodsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.goodsToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.goodsToolStripMenuItem.Text = "Goods";
             this.goodsToolStripMenuItem.Click += new System.EventHandler(this.goodsToolStripMenuItem_Click);
             // 
@@ -245,7 +245,7 @@
             // 
             this.storageToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("storageToolStripMenuItem.Image")));
             this.storageToolStripMenuItem.Name = "storageToolStripMenuItem";
-            this.storageToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.storageToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.storageToolStripMenuItem.Text = "Storage";
             this.storageToolStripMenuItem.Click += new System.EventHandler(this.storageToolStripMenuItem_Click);
             // 
@@ -253,7 +253,7 @@
             // 
             this.supplierToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("supplierToolStripMenuItem.Image")));
             this.supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
-            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.supplierToolStripMenuItem.Text = "Supplier";
             this.supplierToolStripMenuItem.Click += new System.EventHandler(this.supplierToolStripMenuItem_Click);
             // 
@@ -261,7 +261,7 @@
             // 
             this.personBenefitsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("personBenefitsToolStripMenuItem.Image")));
             this.personBenefitsToolStripMenuItem.Name = "personBenefitsToolStripMenuItem";
-            this.personBenefitsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.personBenefitsToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.personBenefitsToolStripMenuItem.Text = "Person benefits";
             this.personBenefitsToolStripMenuItem.Click += new System.EventHandler(this.personBenefitsToolStripMenuItem_Click);
             // 
@@ -270,6 +270,7 @@
             this.accountManage_menu.Name = "accountManage_menu";
             this.accountManage_menu.Size = new System.Drawing.Size(169, 24);
             this.accountManage_menu.Text = "Account management";
+            this.accountManage_menu.Click += new System.EventHandler(this.accountManage_menu_Click);
             // 
             // hello_label
             // 

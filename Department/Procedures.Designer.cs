@@ -1056,21 +1056,15 @@ namespace Department {
             
             private global::System.Data.DataColumn columnpersonNAME;
             
-            private global::System.Data.DataColumn columnpersonPASPORT;
-            
-            private global::System.Data.DataColumn columnpersonIDCode;
-            
-            private global::System.Data.DataColumn columnpersonAddress;
-            
-            private global::System.Data.DataColumn columnpersonBirth;
-            
             private global::System.Data.DataColumn columnworkersSTART;
-            
-            private global::System.Data.DataColumn columnworkersEND;
             
             private global::System.Data.DataColumn columnpositionNAME;
             
-            private global::System.Data.DataColumn columnpositionSALARY;
+            private global::System.Data.DataColumn columnworkersNUM;
+            
+            private global::System.Data.DataColumn columncechNAME;
+            
+            private global::System.Data.DataColumn columnworkersEND;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1115,49 +1109,9 @@ namespace Department {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn personPASPORTColumn {
-                get {
-                    return this.columnpersonPASPORT;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn personIDCodeColumn {
-                get {
-                    return this.columnpersonIDCode;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn personAddressColumn {
-                get {
-                    return this.columnpersonAddress;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn personBirthColumn {
-                get {
-                    return this.columnpersonBirth;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn workersSTARTColumn {
                 get {
                     return this.columnworkersSTART;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn workersENDColumn {
-                get {
-                    return this.columnworkersEND;
                 }
             }
             
@@ -1171,9 +1125,25 @@ namespace Department {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn positionSALARYColumn {
+            public global::System.Data.DataColumn workersNUMColumn {
                 get {
-                    return this.columnpositionSALARY;
+                    return this.columnworkersNUM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cechNAMEColumn {
+                get {
+                    return this.columncechNAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn workersENDColumn {
+                get {
+                    return this.columnworkersEND;
                 }
             }
             
@@ -1214,21 +1184,25 @@ namespace Department {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public workers_to_one_personRow Addworkers_to_one_personRow(string personNAME, string personPASPORT, string personIDCode, string personAddress, System.DateTime personBirth, System.DateTime workersSTART, System.DateTime workersEND, string positionNAME, decimal positionSALARY) {
+            public workers_to_one_personRow Addworkers_to_one_personRow(string personNAME, System.DateTime workersSTART, string positionNAME, string cechNAME, System.DateTime workersEND) {
                 workers_to_one_personRow rowworkers_to_one_personRow = ((workers_to_one_personRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         personNAME,
-                        personPASPORT,
-                        personIDCode,
-                        personAddress,
-                        personBirth,
                         workersSTART,
-                        workersEND,
                         positionNAME,
-                        positionSALARY};
+                        null,
+                        cechNAME,
+                        workersEND};
                 rowworkers_to_one_personRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowworkers_to_one_personRow);
                 return rowworkers_to_one_personRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public workers_to_one_personRow FindByworkersNUM(int workersNUM) {
+                return ((workers_to_one_personRow)(this.Rows.Find(new object[] {
+                            workersNUM})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1249,14 +1223,11 @@ namespace Department {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnpersonNAME = base.Columns["personNAME"];
-                this.columnpersonPASPORT = base.Columns["personPASPORT"];
-                this.columnpersonIDCode = base.Columns["personIDCode"];
-                this.columnpersonAddress = base.Columns["personAddress"];
-                this.columnpersonBirth = base.Columns["personBirth"];
                 this.columnworkersSTART = base.Columns["workersSTART"];
-                this.columnworkersEND = base.Columns["workersEND"];
                 this.columnpositionNAME = base.Columns["positionNAME"];
-                this.columnpositionSALARY = base.Columns["positionSALARY"];
+                this.columnworkersNUM = base.Columns["workersNUM"];
+                this.columncechNAME = base.Columns["cechNAME"];
+                this.columnworkersEND = base.Columns["workersEND"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1264,35 +1235,31 @@ namespace Department {
             private void InitClass() {
                 this.columnpersonNAME = new global::System.Data.DataColumn("personNAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpersonNAME);
-                this.columnpersonPASPORT = new global::System.Data.DataColumn("personPASPORT", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpersonPASPORT);
-                this.columnpersonIDCode = new global::System.Data.DataColumn("personIDCode", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpersonIDCode);
-                this.columnpersonAddress = new global::System.Data.DataColumn("personAddress", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpersonAddress);
-                this.columnpersonBirth = new global::System.Data.DataColumn("personBirth", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpersonBirth);
                 this.columnworkersSTART = new global::System.Data.DataColumn("workersSTART", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnworkersSTART);
-                this.columnworkersEND = new global::System.Data.DataColumn("workersEND", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnworkersEND);
                 this.columnpositionNAME = new global::System.Data.DataColumn("positionNAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpositionNAME);
-                this.columnpositionSALARY = new global::System.Data.DataColumn("positionSALARY", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpositionSALARY);
+                this.columnworkersNUM = new global::System.Data.DataColumn("workersNUM", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnworkersNUM);
+                this.columncechNAME = new global::System.Data.DataColumn("cechNAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncechNAME);
+                this.columnworkersEND = new global::System.Data.DataColumn("workersEND", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnworkersEND);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnworkersNUM}, true));
                 this.columnpersonNAME.AllowDBNull = false;
                 this.columnpersonNAME.MaxLength = 100;
-                this.columnpersonPASPORT.AllowDBNull = false;
-                this.columnpersonPASPORT.MaxLength = 10;
-                this.columnpersonIDCode.AllowDBNull = false;
-                this.columnpersonIDCode.MaxLength = 10;
-                this.columnpersonAddress.AllowDBNull = false;
-                this.columnpersonAddress.MaxLength = 100;
-                this.columnpersonBirth.AllowDBNull = false;
                 this.columnworkersSTART.AllowDBNull = false;
                 this.columnpositionNAME.AllowDBNull = false;
                 this.columnpositionNAME.MaxLength = 100;
-                this.columnpositionSALARY.AllowDBNull = false;
+                this.columnworkersNUM.AutoIncrement = true;
+                this.columnworkersNUM.AutoIncrementSeed = -1;
+                this.columnworkersNUM.AutoIncrementStep = -1;
+                this.columnworkersNUM.AllowDBNull = false;
+                this.columnworkersNUM.ReadOnly = true;
+                this.columnworkersNUM.Unique = true;
+                this.columncechNAME.AllowDBNull = false;
+                this.columncechNAME.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5419,72 +5386,12 @@ namespace Department {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string personPASPORT {
-                get {
-                    return ((string)(this[this.tableworkers_to_one_person.personPASPORTColumn]));
-                }
-                set {
-                    this[this.tableworkers_to_one_person.personPASPORTColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string personIDCode {
-                get {
-                    return ((string)(this[this.tableworkers_to_one_person.personIDCodeColumn]));
-                }
-                set {
-                    this[this.tableworkers_to_one_person.personIDCodeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string personAddress {
-                get {
-                    return ((string)(this[this.tableworkers_to_one_person.personAddressColumn]));
-                }
-                set {
-                    this[this.tableworkers_to_one_person.personAddressColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime personBirth {
-                get {
-                    return ((global::System.DateTime)(this[this.tableworkers_to_one_person.personBirthColumn]));
-                }
-                set {
-                    this[this.tableworkers_to_one_person.personBirthColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime workersSTART {
                 get {
                     return ((global::System.DateTime)(this[this.tableworkers_to_one_person.workersSTARTColumn]));
                 }
                 set {
                     this[this.tableworkers_to_one_person.workersSTARTColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime workersEND {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableworkers_to_one_person.workersENDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'workersEND\' in table \'workers_to_one_person\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableworkers_to_one_person.workersENDColumn] = value;
                 }
             }
             
@@ -5501,12 +5408,39 @@ namespace Department {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal positionSALARY {
+            public int workersNUM {
                 get {
-                    return ((decimal)(this[this.tableworkers_to_one_person.positionSALARYColumn]));
+                    return ((int)(this[this.tableworkers_to_one_person.workersNUMColumn]));
                 }
                 set {
-                    this[this.tableworkers_to_one_person.positionSALARYColumn] = value;
+                    this[this.tableworkers_to_one_person.workersNUMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cechNAME {
+                get {
+                    return ((string)(this[this.tableworkers_to_one_person.cechNAMEColumn]));
+                }
+                set {
+                    this[this.tableworkers_to_one_person.cechNAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime workersEND {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableworkers_to_one_person.workersENDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'workersEND\' in table \'workers_to_one_person\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableworkers_to_one_person.workersENDColumn] = value;
                 }
             }
             
@@ -7450,14 +7384,11 @@ namespace Department.ProceduresTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "workers_to_one_person";
             tableMapping.ColumnMappings.Add("personNAME", "personNAME");
-            tableMapping.ColumnMappings.Add("personPASPORT", "personPASPORT");
-            tableMapping.ColumnMappings.Add("personIDCode", "personIDCode");
-            tableMapping.ColumnMappings.Add("personAddress", "personAddress");
-            tableMapping.ColumnMappings.Add("personBirth", "personBirth");
             tableMapping.ColumnMappings.Add("workersSTART", "workersSTART");
-            tableMapping.ColumnMappings.Add("workersEND", "workersEND");
             tableMapping.ColumnMappings.Add("positionNAME", "positionNAME");
-            tableMapping.ColumnMappings.Add("positionSALARY", "positionSALARY");
+            tableMapping.ColumnMappings.Add("workersNUM", "workersNUM");
+            tableMapping.ColumnMappings.Add("cechNAME", "cechNAME");
+            tableMapping.ColumnMappings.Add("workersEND", "workersEND");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
