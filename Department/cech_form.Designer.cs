@@ -218,6 +218,7 @@
             this.Controls.Add(this.control_groupBox);
             this.Controls.Add(this.control_panel);
             this.Controls.Add(this.cechData);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "cech_form";
             this.Text = "cech";

@@ -92,7 +92,7 @@
             // 
             this.person_table.Image = ((System.Drawing.Image)(resources.GetObject("person_table.Image")));
             this.person_table.Name = "person_table";
-            this.person_table.Size = new System.Drawing.Size(224, 26);
+            this.person_table.Size = new System.Drawing.Size(192, 26);
             this.person_table.Text = "Person";
             this.person_table.Click += new System.EventHandler(this.person_table_Click);
             // 

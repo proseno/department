@@ -14,9 +14,10 @@ namespace Department
     {
         public admin(string status, string login)
         {
-            InitializeComponent();
+            
             if (status != "1")
             {
+                InitializeComponent();
                 var tablesAndReports = status.Split('|');
                 string tablesString = tablesAndReports[0].Substring(3);
                 string reportsString = tablesAndReports[1].Substring(3);
@@ -70,6 +71,7 @@ namespace Department
             }
             else if(status == "1")
             {
+                InitializeComponent();
                 hello_label.Text += "oniichan";
             }
         }

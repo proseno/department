@@ -244,6 +244,7 @@
             this.Controls.Add(this.cechData);
             this.Controls.Add(this.positionData);
             this.Controls.Add(this.personData);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fullData_workers";
             this.Text = "workers";

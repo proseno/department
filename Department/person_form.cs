@@ -66,7 +66,8 @@ namespace Department
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            add_groupBox.Visible = add_groupBox.Visible ? false : true;
+            add_groupBox.Visible = true;
+            clear_all_fields();
             editing = Status.add;
         }
 

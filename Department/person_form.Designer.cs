@@ -345,6 +345,7 @@
             this.Controls.Add(this.control_panel);
             this.Controls.Add(this.personData);
             this.Controls.Add(this.add_groupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "person_form";
             this.Text = "person";

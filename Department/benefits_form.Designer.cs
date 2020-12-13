@@ -278,6 +278,7 @@
             this.Controls.Add(this.control_groupBox);
             this.Controls.Add(this.control_panel);
             this.Controls.Add(this.benefitsData);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "benefits_form";
             this.Text = "benefits";

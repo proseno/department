@@ -202,6 +202,7 @@
             this.Controls.Add(this.cancel_button);
             this.Controls.Add(this.storageData);
             this.Controls.Add(this.control_groupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "storage_search";
             this.Text = "search: storage";

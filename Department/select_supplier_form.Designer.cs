@@ -117,6 +117,7 @@
             this.Controls.Add(this.ok_button);
             this.Controls.Add(this.cancel_button);
             this.Controls.Add(this.supplierData);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "select_supplier_form";
             this.Text = "supplier";
